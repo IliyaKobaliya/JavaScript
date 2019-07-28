@@ -1,0 +1,82 @@
+    let array = [2, 1, 4, 3, -1];
+
+    
+    ///////////////////////////////////////////////////           Sort              /////////////////////////////////////////////////////////////////////////
+
+    {
+        let sortArr = (arr, bool) => arr.sort((a, b) => bool ? a - b : b - a);
+
+        sortArr(array, 1);
+        sortArr(array, 0);
+
+        console.warn(`P.s.(Sort сравнивает currentValue c prevValue(это то значение,которое не прошло по условию) массива и возвращает первым то,которое подходит под условие)`);
+    }
+
+    ///////////////////////////////////////////////////          Reverse             ////////////////////////////////////////////////////////////////////////
+
+    {
+        let reverse = arr => arr.reverse();
+
+        console.log(reverse(array), `reverse`);
+
+        console.warn(`P.s.(Reverse возвращает массив наоборот [1,2,3] => [3,2,1] )`);
+    }
+
+
+    ///////////////////////////////////////////////////           Filter              ///////////////////////////////////////////////////////////////////////
+
+    {
+        let filter = (arr) => arr.filter(item => item % 2 === 0);
+
+        filter(array);
+
+        console.log(filter(array), `возвращаем только четные числа(Создает новый массив)`);
+
+        console.warn(`Filter возвращает только те значения массива,которые прошли по условию`);
+    }
+
+    ///////////////////////////////////////////////////           forEach              //////////////////////////////////////////////////////////////////////
+
+    {
+        let forEach = arr => arr.forEach((item, index) => {
+            console.log(`item[${index}] = ${item}`);
+        });
+        forEach(array);
+        console.warn(`P.s. (forEach не возвращает новый массив) `);
+    }
+
+    ///////////////////////////////////////////////////           Map               /////////////////////////////////////////////////////////////////////////
+
+    {
+        let map = arr => arr.map((item, index) => console.log(`item[${index}] = ${item}`));
+
+        map(array);
+
+        console.warn(`P.s.(Map возвращает новый массив)`);
+    }
+    ///////////////////////////////////////////////////           Reduce               //////////////////////////////////////////////////////////////////////
+
+    const initialArray = [
+        {id: 1, name: "item one", tags: ["music", "sport", "science"]},
+        {id: 2, name: "item two", tags: ["music"]},
+        {id: 3, name: "item three", tags: ["fun"]},
+        {id: 4, name: "item four", tags: ["sport", "science"]},
+        {id: 5, name: "item five", tags: []},
+    ];
+
+    const fun = arr =>
+        arr.reduce((acc, item) => {
+            if (!item.tags.length) {
+                acc["without tag"] = acc["without tag"]
+                    ? [...acc["without tag"], item]
+                    : [item];
+                return acc;
+            }
+
+            item.tags.forEach(I => {
+                acc[I] = acc[I] ? [...acc[I], item] : [item];
+            });
+
+            return acc;
+        }, {});
+    console.log(fun(initialArray));
