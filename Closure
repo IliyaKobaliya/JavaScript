@@ -1,0 +1,20 @@
+const makeCounter = step => {
+    let count = 0;
+
+    return () => {
+        const tmp = count;
+        count += step;
+        return tmp
+    }
+};
+let a = makeCounter(5);
+let b = makeCounter(3);
+console.log(a());
+
+const foo = n => m => n + m
+
+const makeCounter = step => {
+  let count = 0
+  
+  return () => (count += step)
+}
