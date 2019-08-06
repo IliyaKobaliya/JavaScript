@@ -1,0 +1,6 @@
+
+const List = ({ items, renderItem }) => items.map(item => renderItem(item))
+<List
+  items={[]}
+  renderItem={(item) => <li>{item}</li>}
+/>
