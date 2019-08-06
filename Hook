@@ -1,0 +1,6 @@
+1) `useEffect` 
+//Check and load store
+ const dispatch = useDispatch();
+    useEffect(() => {
+        if (Array.isArray(list) && list.length === 0) dispatch(getTodo(`todo`, `getTodoList`))
+    }, [list,dispatch]);
