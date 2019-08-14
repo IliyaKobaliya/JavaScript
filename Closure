@@ -1,17 +1,19 @@
 let Counter = () => {
     let count = 0;
 
-    let inc = (num) => count + num;
-    let dec = (num) => count - num;
+    let inc = (num) => count += num;
+    let dec = (num) => count -= num;
     let getCount = () => console.log(count);
     return {inc, dec, getCount}
 };
 
-let module = Counter();
+let module1 = Counter(),
+    module2 = Counter();
 
-module.inc(13);
-module.dec(4);
-module.getCount();
+module1.inc(13);
+module1.dec(4);
+module1.getCount();
+module2.getCount();
 
 
 
