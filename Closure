@@ -1,3 +1,6 @@
+for (let i = 0; i <= 5; i++) ((j) => setTimeout(() => console.log(j), j * 1000))(i)
+
+
 const makeCounter = step => {
     let count = 0;
 
@@ -10,6 +13,7 @@ const makeCounter = step => {
 let a = makeCounter(5);
 let b = makeCounter(3);
 console.log(a());
+
 
 const foo = n => m => n + m
 
