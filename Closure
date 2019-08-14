@@ -1,22 +1,20 @@
-let authorizationModule = () => {
-    let name = `Iliya Kobaliya`,
-        balance = 1000,
-        vip = true;
-    function getName() {
-        console.log(vip ? `_vip_ ${name}` : `name`);
-    }
-    function getBalance() {
-        console.log(balance)
-    }
-    return {
-        getName,
-        getBalance
-    };
-};
-let Module = authorizationModule();
+let Counter = () => {
+    let count = 0;
 
-Module.getName();
-Module.getBalance();
+    let inc = (num) => count + num;
+    let dec = (num) => count - num;
+    let getCount = () => console.log(count);
+    return {inc, dec, getCount}
+};
+
+let module = Counter();
+
+module.inc(13);
+module.dec(4);
+module.getCount();
+
+
+
 
 
 for (let i = 0; i <= 5; i++) {
