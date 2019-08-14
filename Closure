@@ -1,3 +1,24 @@
+let authorizationModule = () => {
+    let name = `Iliya Kobaliya`,
+        balance = 1000,
+        vip = true;
+    function getName() {
+        console.log(vip ? `_vip_ ${name}` : `name`);
+    }
+    function getBalance() {
+        console.log(balance)
+    }
+    return {
+        getName,
+        getBalance
+    };
+};
+let Module = authorizationModule();
+
+Module.getName();
+Module.getBalance();
+
+
 for (let i = 0; i <= 5; i++) {
     setTimeout(() => console.log(i), i * 1000)
 }
