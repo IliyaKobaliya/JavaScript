@@ -15,8 +15,20 @@ module1.dec(4);
 module1.getCount();
 module2.getCount();
 
+////////Для того что бы модуль существовал в 1ом экземпляре  
+let Counter = (() => {
+    let count = 0;
 
+    let inc = (num) => count += num;
+    let dec = (num) => count -= num;
+    let getCount = () => console.log(count);
+    return {inc, dec, getCount}
+})();
 
+Counter.inc(13);
+Counter.dec(4);
+Counter.getCount();
+/////////////////////////////////////////////////////////////
 
 
 for (let i = 0; i <= 5; i++) {
