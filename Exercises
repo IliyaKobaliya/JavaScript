@@ -1,0 +1,10 @@
+// Возвращаем строки, которые читаются слева направо одинаково
+let strings = [`abc`,`aba`,`bcd`,`cdc`];
+strings.forEach((string)=>{
+  let reversed = "";
+  for(let i = --string.length ; i >= 0; i--){
+    reversed += string[i];
+  }
+  if(reversed === string){console.log(string)}
+
+})
