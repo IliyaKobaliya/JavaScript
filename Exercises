@@ -19,3 +19,6 @@ else if(item % 5 === 0){
 }
 else{console.log(item)}
 });
+////////////////////////////////////Каждое четное число увеличиваем в 2 раза
+const fun = arr => arr.map(num => (num % 2 === 0) ? (num * 2) : num);
+console.log(fun([1, 4, 6, 7, 3, 19]));
