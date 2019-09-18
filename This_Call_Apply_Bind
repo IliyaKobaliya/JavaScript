@@ -3,3 +3,23 @@
         return this.map(num => num * num)
     };
     console.log(array.getSqr())
+    ////////////////////
+    let workers = [
+        {
+            name: `Iliya`,
+            zp: `1111`
+        },
+        {
+            name: `Dima`,
+            zp: `999`
+        },
+        {
+            name: `Miho`,
+            zp: `888`
+        },
+    ];
+
+    Array.prototype.getZP = function (tax) {
+        return this.map(worker => ({...worker, realyZP: worker.zp - (worker.zp * tax)}))
+    };
+    console.log(workers.getZP(0.2))
