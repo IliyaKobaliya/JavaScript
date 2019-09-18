@@ -1,0 +1,5 @@
+    let array = [2, 4, 6, 8];
+    Array.prototype.getSqr = function fn() {
+        return this.map(num => num * num)
+    };
+    console.log(array.getSqr())
