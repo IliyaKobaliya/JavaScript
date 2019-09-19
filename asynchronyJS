@@ -1,0 +1,10 @@
+ let sleep = ms => {
+        return new Promise((res, rej) => {
+            setTimeout(() => (ms > 2000) ? rej(`404`) : res(ms), ms)
+        })
+    };
+
+    sleep(5000).then(ms => console.log(`Promise after ${ms / 1000} seconds`)).catch(err => console.log(err));
+    sleep(2000).then(ms => console.log(`Promise after ${ms / 1000} seconds`)).catch(err => console.log(err));
+
+    // Promise.all([sleep(2000), sleep(4000)].then(()=>consol.log(END))
