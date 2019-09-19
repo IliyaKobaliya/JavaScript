@@ -1,0 +1,10 @@
+    let sqr = (a, b) => {
+        let res = a;
+        for (let i = 1; i < b; i++) {
+            res *= a;
+        }
+        return res;
+    };
+    let sqr2 = (a, b) => (b === 1) ? b : (a * sqr(a, b - 1));
+    console.log(sqr2(2, 2));
+    console.log(sqr(3,2));
