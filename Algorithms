@@ -1,0 +1,65 @@
+       let graph = {};
+        graph["Me"] = ["Alex", "Dan", "Alena"];
+        graph["Alex"] = ["Dan"];
+        graph["Dan"] = ["Alena"];
+        graph["Alena"] = ["Vane", "Tim"];
+        graph["Tim"] = [];
+        graph["Vane"] = [];
+
+        let searchPeople = (people, name) => {  //________В качестве очереди queue  можно использовать множество ,что бы избежать дублирования________________-
+            let queue = [],
+                searched = [],
+                addQueue = arr => queue.push(...arr),
+                removeQueue = () => queue.shift(),
+                check = item => (item === name && searched.indexOf(item) === -1);
+            addQueue(people);
+            while (queue.length !== 0) {
+                let person = removeQueue();
+                console.log(person);
+                    if (check(person)) {
+                        console.log(`Tim was found`);
+                        return true;
+                    } else {
+                        console.log(1);
+                        addQueue(graph[person]);
+                        searched.push(person)
+                    }
+            }
+            console.log(`Not found!`);
+            return false;
+        };
+
+        searchPeople(graph[`Me`], `Tim`);
+
+
+const arr = [1, 3, 2, 7, 5, 6, 4];
+function QuickSort(A) {
+    if (A.length === 0) return [];
+    let a = [], b = [], p = A[0];
+    for (let i = 1; i < A.length; i++) {
+        if (A[i] < p) a[a.length] = A[i];
+        else b[b.length] = A[i];
+    }
+    return QuickSort(a).concat(p, QuickSort(b));
+}
+
+console.log(QuickSort(arr));
+let getNum = (array, item) => {
+    let low = 0,
+        high = array.length - 1;
+    while (low < high) {
+        let middle = Math.ceil((low + high) / 2),
+            guess = array[middle];
+        if (guess === item) {
+            return middle
+        }
+        if (guess > item) {
+            high = middle--;
+        } else if (guess < item) {
+            low = middle++;
+        } else {
+            return NaN;
+        }
+
+    }
+};
