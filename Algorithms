@@ -1,4 +1,29 @@
-       let graph = {};
+    Связной список
+    let list = {
+  value: 1,
+  next: {
+    value: 2,
+    next: {
+      value: 3,
+      next: {
+        value: 4,
+        next: null
+      }
+    }
+  }
+};
+   let mapList = ({value,next}) => {
+        if (next === null) {
+            console.log(value);
+        } else {
+            console.log(value);
+            mapList(next)
+        }
+    };
+mapList(list)
+      
+      
+      let graph = {};
         graph["Me"] = ["Alex", "Dan", "Alena"];
         graph["Alex"] = ["Dan"];
         graph["Dan"] = ["Alena"];
