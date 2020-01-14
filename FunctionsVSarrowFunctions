@@ -1,0 +1,17 @@
+//Обычная функция ссылается на собственный контекст (this)(при создании),а стрелочная фукнция на родительский this при вызове(у нее нет собственного this) 
+
+let user = {
+    message: " user",
+    fun1: function () {
+        return this.message
+    },
+    fun2: () => this
+};
+
+
+
+function test() {
+    console.log(user.fun1(), user.fun2());
+}
+
+test();
